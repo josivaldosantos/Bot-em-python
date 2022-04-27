@@ -24,6 +24,17 @@ async def on_ready():
     print('Bot ID: {}'.format(client.user.id))
     print(f'Ping: {round (client.latency * 1000)}')
 
+# Evento que avisa ao usúario se ele digitar um comando que não existe
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        embed = discord.Embed(
+            title='Ops! 😥',
+            description='Error: {}'.format(error),
+            colour=discord.Colour.from_rgb(0, 255, 0)
+        )
+        await ctx.send(embed=embed, delete_after=10.0)
+    
 ## comandos
 
 # Hello World
