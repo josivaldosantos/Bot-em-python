@@ -75,13 +75,13 @@ async def roll(ctx, numero):
     dado = random.randint(1,100)
     v1 = (dado*100)/numero
     if v1 >= 1 and v1 <= 5:
-        await ctx.send(f'Valor do dado é: {dado} Extremo')
+        await ctx.send(f'Valor do dado é: ``{dado}`` \nExtremo')
     if v1 >= 6 and v1 <= 20:
-        await ctx.send(f'Valor do dado é: {dado} Bom')
+        await ctx.send(f'Valor do dado é: ``{dado}`` \nBom')
     if v1 >= 21 and v1 <=100:
-        await ctx.send(f'Valor do dado é: {dado} Normal')
+        await ctx.send(f'Valor do dado é: ``{dado}`` \nNormal')
     if v1 >=100:
-        await ctx.send(f'Valor do dado é: {dado} Fracasso')
+        await ctx.send(f'Valor do dado é: ``{dado}`` \nFracasso')
     
 
 
