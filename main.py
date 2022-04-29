@@ -65,6 +65,23 @@ async def Clear(ctx, number=None):
 async def p(ctx):
     await ctx.send(f'🏓Pong! Meu ping é de: `{round (client.latency * 1000)} ms` ')
 
+#comando de dado pra rpg
+@client.command(name="roll")
+async def roll(ctx, numero):
+    numero = int(numero)
+    if numero > 100:
+        while numero > 100:
+            numero = int(numero)
+    dado = random.randint(1,100)
+    v1 = (dado*100)/numero
+    if v1 >= 1 and v1 <= 5:
+        await ctx.send(f'Valor do dado é: {dado} Extremo')
+    if v1 >= 6 and v1 <= 20:
+        await ctx.send(f'Valor do dado é: {dado} Bom')
+    if v1 >= 21 and v1 <=100:
+        await ctx.send(f'Valor do dado é: {dado} Normal')
+    if v1 >=100:
+        await ctx.send(f'Valor do dado é: {dado} Fracasso')
     
 
 
